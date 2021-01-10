@@ -83,10 +83,10 @@ public class ConsoleSamples {
     }
 
     public static void printWritingInJsonToChoseFrom() {
-        System.out.println(" —— —— —— —— —— —— ——\n" +
-                "|  1. Write single   |\n" +
-                "|  2. Write multiple |\n" +
-                " —— —— —— —— —— —— —— "
+        System.out.println(" —— —— —— —— —— —— —— —— ——\n" +
+                "|  1. Write single mission  |\n" +
+                "|  2. Write multiple        |\n" +
+                " —— —— —— —— —— —— —— —— —— "
         );
     }
 
