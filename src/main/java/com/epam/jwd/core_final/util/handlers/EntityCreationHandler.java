@@ -8,19 +8,15 @@ import com.epam.jwd.core_final.factory.impl.SpaceshipFactory;
 import com.epam.jwd.core_final.service.impl.SimpleCrewService;
 import com.epam.jwd.core_final.service.impl.SimpleMissionService;
 import com.epam.jwd.core_final.service.impl.SimpleSpaceshipService;
-import com.epam.jwd.core_final.util.ConsoleSamples;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.Map;
-import java.util.Scanner;
 
 public class EntityCreationHandler extends MajorOptionsHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(EntityCreationHandler.class);
-
-    private static final Scanner SCANNER = new Scanner(System.in);
 
     public static void handleEntityCreation(int subCommand) {
         LOGGER.info("Handling entity creation by user command...");
