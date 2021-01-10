@@ -55,6 +55,7 @@ public class NassaContext implements ApplicationContext {
     private void initCrewMembers() throws InvalidStateException {
         fileReaderAndCreator.setPathName(PropertyReaderUtil.applicationProperties.getInputRootDir() + "/"
                 + PropertyReaderUtil.applicationProperties.getCrewFileName());
+
         fileReaderAndCreator.setCrewMemberFetchAndCreateStrategy();
         fileReaderAndCreator.fetchFromFileAndCreateEntities();
     }
@@ -62,6 +63,7 @@ public class NassaContext implements ApplicationContext {
     private void initSpaceships() throws InvalidStateException {
         fileReaderAndCreator.setPathName(PropertyReaderUtil.applicationProperties.getInputRootDir() + "/"
                 + PropertyReaderUtil.applicationProperties.getSpaceshipsFileName());
+
         fileReaderAndCreator.setSpaceshipFetchAndCreateStrategy();
         fileReaderAndCreator.fetchFromFileAndCreateEntities();
     }
