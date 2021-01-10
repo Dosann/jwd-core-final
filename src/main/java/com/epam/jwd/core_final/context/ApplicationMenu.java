@@ -1,7 +1,7 @@
 package com.epam.jwd.core_final.context;
 
 import com.epam.jwd.core_final.context.impl.SubApplicationMenu;
-import com.epam.jwd.core_final.util.ConsoleSample;
+import com.epam.jwd.core_final.util.ConsoleSamples;
 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public interface ApplicationMenu {
         Scanner scanner = new Scanner(System.in);
         Integer command;
         do {
-            ConsoleSample.printMajorOptionsToChooseFrom();
+            ConsoleSamples.printMajorOptionsToChooseFrom();
             command = scanner.nextInt();
             handleUserInput(command);
         }

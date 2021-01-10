@@ -1,7 +1,7 @@
 package com.epam.jwd.core_final.util.handlers;
 
 import com.epam.jwd.core_final.domain.FlightMission;
-import com.epam.jwd.core_final.util.ConsoleSample;
+import com.epam.jwd.core_final.util.ConsoleSamples;
 import com.epam.jwd.core_final.util.PropertyReaderUtil;
 import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -28,12 +28,12 @@ public class WriteJsonHandler {
         LOGGER.info("Handling writing missions in JSON format...");
 
         System.out.println("Choose how to write flight missions in JSON format:");
-        ConsoleSample.printWritingInJsonToChoseFrom();
+        ConsoleSamples.printWritingInJsonToChoseFrom();
         int userChoice = SCANNER.nextInt();
         if (userChoice == 1) {
-            writeMultipleMissions();
-        } else if (userChoice == 2) {
             writeOneMission();
+        } else if (userChoice == 2) {
+            writeMultipleMissions();
         } else {
             LOGGER.error("Impossible to resolve user command");
             throw new IllegalArgumentException("Invalid command");
@@ -79,6 +79,8 @@ public class WriteJsonHandler {
             fetchMissionFromUserInput().ifPresent(flightMissionList::add);
         }
         writeToJson(flightMissionList);
+        System.out.println("Missions have been written: You may look in output file");
+        LOGGER.info("Missions has been written in output file");
     }
 
     private static Optional<FlightMission> fetchMissionFromUserInput() {

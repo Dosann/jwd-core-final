@@ -13,7 +13,7 @@ import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.service.impl.SimpleCrewService;
 import com.epam.jwd.core_final.service.impl.SimpleMissionService;
 import com.epam.jwd.core_final.service.impl.SimpleSpaceshipService;
-import com.epam.jwd.core_final.util.ConsoleSample;
+import com.epam.jwd.core_final.util.ConsoleSamples;
 import com.epam.jwd.core_final.util.FlightMissionStatus;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,7 +38,7 @@ public class MajorOptionsHandler {
 
     private static Map<Role, Short> fetchCrewMembers(int amountOfCrewMembers) {
         System.out.println("Choose role and number of members of role you'd like to have:\n" + "Expected input [1:4]");
-        ConsoleSample.printRolesToChoseFrom();
+        ConsoleSamples.printRolesToChoseFrom();
 
         Map<Role, Short> mapOfSpaceshipCrew = new HashMap<>();
         for (int i = 0; i < amountOfCrewMembers; i++) {
@@ -102,7 +102,7 @@ public class MajorOptionsHandler {
         LOGGER.info("Fetching role from user input...");
 
         System.out.println("Choose role:");
-        ConsoleSample.printRolesToChoseFrom();
+        ConsoleSamples.printRolesToChoseFrom();
 
         String userCommand = SCANNER.next();
         LOGGER.info("Role has been fetched");
@@ -113,7 +113,7 @@ public class MajorOptionsHandler {
         LOGGER.info("Fetching rank from user input...");
 
         System.out.println("Choose rank:");
-        ConsoleSample.printRanksToChoseFrom();
+        ConsoleSamples.printRanksToChoseFrom();
 
         String userCommand = SCANNER.next();
         LOGGER.info("Rank has been fetched");
@@ -124,7 +124,7 @@ public class MajorOptionsHandler {
         LOGGER.info("Fetching mission status from user input...");
 
         System.out.println(commandToUser);
-        ConsoleSample.printMissionResultsToChooseFrom();
+        ConsoleSamples.printMissionResultsToChooseFrom();
 
         String userCommand = SCANNER.next();
         LOGGER.info("Flight mission status has been fetched");

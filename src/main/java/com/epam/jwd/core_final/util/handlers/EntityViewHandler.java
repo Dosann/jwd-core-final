@@ -13,7 +13,7 @@ import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.service.impl.SimpleCrewService;
 import com.epam.jwd.core_final.service.impl.SimpleMissionService;
 import com.epam.jwd.core_final.service.impl.SimpleSpaceshipService;
-import com.epam.jwd.core_final.util.ConsoleSample;
+import com.epam.jwd.core_final.util.ConsoleSamples;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -48,7 +48,7 @@ public class EntityViewHandler extends MajorOptionsHandler {
     private static void viewCrewMemberAccordingToUserInput() {
         LOGGER.info("Viewing crew member according to user choice...");
 
-        ConsoleSample.printEntityViewToChoseFrom();
+        ConsoleSamples.printEntityViewToChoseFrom();
         int viewChoice = SCANNER.nextInt();
         if (viewChoice == 1) {
             SimpleCrewService.INSTANCE.findAllCrewMembers().forEach(System.out::println);
@@ -84,7 +84,7 @@ public class EntityViewHandler extends MajorOptionsHandler {
     private static void viewSpaceshipAccordingToUserInput() {
         LOGGER.info("Viewing spaceship according to user choice...");
 
-        ConsoleSample.printEntityViewToChoseFrom();
+        ConsoleSamples.printEntityViewToChoseFrom();
         int viewChoice = SCANNER.nextInt();
         if (viewChoice == 1) {
             SimpleSpaceshipService.INSTANCE.findAllSpaceships().forEach(System.out::println);
@@ -99,7 +99,6 @@ public class EntityViewHandler extends MajorOptionsHandler {
         LOGGER.info("Building a criteria for spaceship to find according to user choice...");
 
         String name = fetchEntityNameFromUserInput("Choose name:");
-        String userCommand;
 
         System.out.println("Choose crew:");
         Map<Role, Short> mapOfSpaceshipCrew = fetchMapOfCrewFromUserInput();
@@ -107,7 +106,7 @@ public class EntityViewHandler extends MajorOptionsHandler {
         Long distance = fetchDistanceFromUserInput("Choose distance:");
 
         System.out.println("Choose whether or not spaceship is ready for next mission: [Yes / No]");
-        userCommand = SCANNER.next();
+        String userCommand = SCANNER.next();
         Boolean isReadyForNextMission = resolvePreparationForNextMissionFromUserInput(userCommand);
 
         Criteria<Spaceship> spaceshipCriteria = SpaceshipCriteria
@@ -124,7 +123,7 @@ public class EntityViewHandler extends MajorOptionsHandler {
     private static void viewFlightMissionAccordingToUserInput() {
         LOGGER.info("Viewing flight mission according to user choice...");
 
-        ConsoleSample.printEntityViewToChoseFrom();
+        ConsoleSamples.printEntityViewToChoseFrom();
         int viewChoice = SCANNER.nextInt();
         if (viewChoice == 1) {
             SimpleMissionService.INSTANCE.findAllMissions().forEach(System.out::println);

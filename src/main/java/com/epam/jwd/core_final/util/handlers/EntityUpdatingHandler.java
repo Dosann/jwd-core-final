@@ -7,7 +7,7 @@ import com.epam.jwd.core_final.domain.Role;
 import com.epam.jwd.core_final.domain.Spaceship;
 import com.epam.jwd.core_final.service.impl.SimpleCrewService;
 import com.epam.jwd.core_final.service.impl.SimpleSpaceshipService;
-import com.epam.jwd.core_final.util.ConsoleSample;
+import com.epam.jwd.core_final.util.ConsoleSamples;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -81,7 +81,7 @@ public class EntityUpdatingHandler extends MajorOptionsHandler {
 
         do {
             System.out.println("Choose attributes to update:\nTo exit from this option, press -e");
-            ConsoleSample.printSpaceshipAttributesToUpdate();
+            ConsoleSamples.printSpaceshipAttributesToUpdate();
 
             userChoice = SCANNER.next();
             updateSpaceshipAttributesAccordingToUserChoice(userChoice, spaceship);
@@ -129,7 +129,7 @@ public class EntityUpdatingHandler extends MajorOptionsHandler {
 
         do {
             System.out.println("Choose attributes to update:\nTo exit from this option, press -e");
-            ConsoleSample.printMissionAttributesToUpdate();
+            ConsoleSamples.printMissionAttributesToUpdate();
 
             userChoice = SCANNER.next();
             updateMissionAttributesAccordingToUserChoice(userChoice, flightMission);

@@ -8,7 +8,7 @@ import com.epam.jwd.core_final.factory.impl.SpaceshipFactory;
 import com.epam.jwd.core_final.service.impl.SimpleCrewService;
 import com.epam.jwd.core_final.service.impl.SimpleMissionService;
 import com.epam.jwd.core_final.service.impl.SimpleSpaceshipService;
-import com.epam.jwd.core_final.util.ConsoleSample;
+import com.epam.jwd.core_final.util.ConsoleSamples;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -41,14 +41,8 @@ public class EntityCreationHandler extends MajorOptionsHandler {
         LOGGER.info("Creating crew member from user input...");
 
         String name = fetchEntityNameFromUserInput("Input name:");
-
-        System.out.println("Choose role:");
-        ConsoleSample.printRolesToChoseFrom();
-        Role role = Role.resolveRoleById(SCANNER.nextInt());
-
-        System.out.println("Choose rank:");
-        ConsoleSample.printRanksToChoseFrom();
-        Rank rank = Rank.resolveRankById(SCANNER.nextInt());
+        Role role = fetchRoleFromUserInput();
+        Rank rank = fetchRankFromUserInput();
 
         SimpleCrewService.INSTANCE.createCrewMember(CrewMemberFactory.getInstance()
                 .create(name, role, rank));
@@ -61,9 +55,7 @@ public class EntityCreationHandler extends MajorOptionsHandler {
         LOGGER.info("Creating spaceship by user command...");
 
         String name = fetchEntityNameFromUserInput("Input name:");
-
         Map<Role, Short> mapOfSpaceshipCrew = fetchMapOfCrewFromUserInput();
-
         Long distance = fetchDistanceFromUserInput("Input flight distance:");
 
         SimpleSpaceshipService.INSTANCE.createSpaceship(SpaceshipFactory.getInstance()

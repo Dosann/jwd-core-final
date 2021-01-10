@@ -2,7 +2,7 @@ package com.epam.jwd.core_final.context.impl;
 
 import com.epam.jwd.core_final.context.ApplicationContext;
 import com.epam.jwd.core_final.context.ApplicationMenu;
-import com.epam.jwd.core_final.util.ConsoleSample;
+import com.epam.jwd.core_final.util.ConsoleSamples;
 import com.epam.jwd.core_final.util.handlers.EntityCreationHandler;
 import com.epam.jwd.core_final.util.handlers.EntityUpdatingHandler;
 import com.epam.jwd.core_final.util.handlers.EntityViewHandler;
@@ -28,7 +28,7 @@ public class SubApplicationMenu implements ApplicationMenu {
 
     public void showFunctionalDetailsToUser(Integer command) {
         if (command != 4) {
-            ConsoleSample.printEntitiesToChoseFrom();
+            ConsoleSamples.printEntitiesToChoseFrom();
         }
         handleUserOptionalInput(command);
     }

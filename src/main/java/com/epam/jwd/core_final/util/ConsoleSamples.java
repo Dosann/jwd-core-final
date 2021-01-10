@@ -1,6 +1,6 @@
 package com.epam.jwd.core_final.util;
 
-public class ConsoleSample {
+public class ConsoleSamples {
 
     public static void printMajorOptionsToChooseFrom() {
         System.out.println(" —— —— —— —— —— —— —— —— —— ——\n" +
@@ -84,8 +84,8 @@ public class ConsoleSample {
 
     public static void printWritingInJsonToChoseFrom() {
         System.out.println(" —— —— —— —— —— —— ——\n" +
-                "|  1. Write multiple |\n" +
-                "|  2. Write one      |\n" +
+                "|  1. Write single   |\n" +
+                "|  2. Write multiple |\n" +
                 " —— —— —— —— —— —— —— "
         );
     }
