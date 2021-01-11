@@ -90,7 +90,7 @@ public class EntityViewHandler extends MajorOptionsHandler {
             SimpleSpaceshipService.INSTANCE.findAllSpaceships().forEach(System.out::println);
         } else if (viewChoice == 2) {
             System.out.println("Let's build a criteria to find spaceships\n" +
-                    "If you don't want any field to be filled in criteria, you may skip it [press <Enter>]");
+                    "If you don't want any field to be filled in criteria, you may skip it [enter -s]");
             viewSpaceshipByUserCriteria();
         }
     }
@@ -129,7 +129,7 @@ public class EntityViewHandler extends MajorOptionsHandler {
             SimpleMissionService.INSTANCE.findAllMissions().forEach(System.out::println);
         } else if (viewChoice == 2) {
             System.out.println("Let's build a criteria to find flight missions\n" +
-                    "If you don't want any field to be filled in criteria, you may skip it [press <Enter>]");
+                    "If you don't want any field to be filled in criteria, you may skip it [enter -s]");
             viewFlightMissionByUserCriteria();
         }
     }
